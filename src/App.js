@@ -30,7 +30,7 @@ function App() {
             <h2>Detta är en text som är i h2</h2>
           </header>
           <div className="card-image-container">
-            <img src={require("./assets/load.gif")} alt="temp" />
+            <img src={profileImage} alt="temp" />
           </div>
           <p>Detta är brödtext som är i p</p>
         </article>
