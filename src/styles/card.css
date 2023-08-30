@@ -32,7 +32,7 @@ body {
   padding: 1.5rem;
   border-radius: 16px;
   background: #17141d;
-  box-shadow: -0.5rem 0 1.5rem #000; /* Adjust the shadow values */
+  box-shadow: -0.5rem 0 1.5rem #000;
   display: flex;
   flex-direction: column;
   transition: 0.2s;
@@ -71,22 +71,13 @@ body {
   color: #ff8a00;
   border: 0;
   display: inline-block;
-  cursor: pointer;
-}
 
-.card-header h2:hover {
+  /* gradient */
   background: linear-gradient(90deg, #ff8a00, #e52e71);
   text-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-.tags {
-  margin: 1rem 0 2rem;
-  padding: 0.5rem 0 1rem;
-  line-height: 2;
-  margin-bottom: 0;
 }
 
 .card-image-container {
@@ -124,7 +115,8 @@ body {
   border-radius: 50%;
 }
 
-@media (max-width: 600px) {
+/* mobiler och liknande */
+@media (max-width: 900px) {
   .profile-image {
     width: 150px;
     height: 150px;
