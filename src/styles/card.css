@@ -115,10 +115,38 @@ body {
   border-radius: 50%;
 }
 
-/* mobiler och liknande */
+/* For screens wider than 900px (desktop) */
+@media (min-width: 901px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .text-container {
+    order: 1;
+    padding: 20px;
+  }
+
+  .image-container {
+    order: 2;
+    padding: 20px;
+  }
+}
+
+/* For screens 900px and narrower (mobile) */
 @media (max-width: 900px) {
+  .header {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .text-container,
+  .image-container {
+    order: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
   .profile-image {
-    width: 150px;
-    height: 150px;
+    margin-top: 10px;
   }
 }
