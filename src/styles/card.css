@@ -120,3 +120,38 @@ a {
   background-clip: text;
   border-color: white;
 }
+
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex; /* Använd flexbox för att placera elementen bredvid varandra */
+  align-items: center; /* Centrera innehållet vertikalt */
+}
+
+.text-container {
+  flex: 1; /* Ta upp så mycket utrymme som möjligt, så att bilden hamnar till höger */
+  padding: 20px; /* Lite mellanrum runt texten */
+}
+
+.image-container {
+  flex: 1; /* Ta upp så mycket utrymme som möjligt */
+  display: flex;
+  justify-content: flex-end; /* Placera bilden till höger */
+  padding: 20px; /* Lite mellanrum runt bilden */
+}
+
+.profile-image {
+  width: 300px; /* Anpassa storleken efter behov */
+  height: 300px; /* Anpassa storleken efter behov */
+}
+
+.profile-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%; /* Runda av hörnen på bilden */
+}
