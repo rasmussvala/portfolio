@@ -81,6 +81,9 @@ body {
 }
 
 .card-image-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
   position: relative;
   overflow: hidden;
   border-radius: 16px;
@@ -95,6 +98,10 @@ body {
 .text-container {
   flex: 1;
   padding: 20px;
+}
+
+.text-container p {
+  line-height: 1.5; /* Adjust the value to increase or decrease spacing */
 }
 
 .image-container {
