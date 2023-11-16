@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/http//:rasmussvala.github.io/portfolio/static/css/main.fe25b949.css",
+    "main.js": "/http//:rasmussvala.github.io/portfolio/static/js/main.303f8126.js",
+    "static/media/Memoji.png": "/http//:rasmussvala.github.io/portfolio/static/media/Memoji.316f4eda8382ba7920bc.png",
+    "index.html": "/http//:rasmussvala.github.io/portfolio/index.html",
+    "main.fe25b949.css.map": "/http//:rasmussvala.github.io/portfolio/static/css/main.fe25b949.css.map",
+    "main.303f8126.js.map": "/http//:rasmussvala.github.io/portfolio/static/js/main.303f8126.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe25b949.css",
+    "static/js/main.303f8126.js"
+  ]
+}
