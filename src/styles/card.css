@@ -1,8 +1,20 @@
+:root {
+  --text-color: white;
+  --background-color: #17141d;
+  --primary-color: #ff8a00;
+  --secondary-color: #e52e71;
+  --accent-color: #7a7a8c;
+  --scrollbar-track-color: var(--background-color);
+  --scrollbar-thumb-color: #201c29;
+  --card-shadow-color: #000;
+  --card-hover-transform: translateY(-1rem);
+}
+
 body {
   padding: 0;
   margin: 0;
-  background-color: #17141d;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: "DM Mono", monospace;
 }
 
@@ -17,12 +29,12 @@ body {
 }
 
 .card-list::-webkit-scrollbar-thumb {
-  background: #201c29;
+  background: var(--scrollbar-thumb-color);
   border-radius: 3px;
 }
 
 .card-list::-webkit-scrollbar-track {
-  background: #17141d;
+  background: var(--scrollbar-track-color);
 }
 
 .card {
@@ -31,8 +43,8 @@ body {
   min-width: 250px;
   padding: 1.5rem;
   border-radius: 16px;
-  background: #17141d;
-  box-shadow: -0.5rem 0 1.5rem #000;
+  background: var(--background-color);
+  box-shadow: -0.5rem 0 1.5rem var(--card-shadow-color);
   display: flex;
   flex-direction: column;
   transition: 0.2s;
@@ -48,7 +60,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-1rem);
+  transform: var(--card-hover-transform);
 }
 
 .card:not(:first-child) {
@@ -62,18 +74,20 @@ body {
 .card-header p {
   font-size: 14px;
   margin: 0 0 1rem;
-  color: #7a7a8c;
+  color: var(--accent-color);
 }
 
 .card-header h2 {
   font-size: 20px;
   margin: 0.25rem 0 auto;
-  color: #ff8a00;
+  color: var(--secondary-color);
   border: 0;
   display: inline-block;
-
-  /* gradient */
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   text-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
