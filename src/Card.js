@@ -1,8 +1,6 @@
 import React from "react";
 
 function Card({ date, title, image, description }) {
-  console.log(image);
-
   return (
     <article className="card">
       <header className="card-header">
