@@ -142,6 +142,25 @@ body {
   border-radius: 50%;
 }
 
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links a:hover {
+  color: var(--primary-color); /* Change to your preferred hover color */
+}
+
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header {
