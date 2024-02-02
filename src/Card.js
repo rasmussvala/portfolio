@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Card({ date, title, image, description }) {
+function Card({ date, title, image: imagePath, description }) {
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    const importImage = async () => {
+      try {
+        const imgModule = await import(`${imagePath}`);
+        setImage(imgModule.default);
+      } catch (error) {
+        console.error("Error loading image:", error);
+      }
+    };
+
+    importImage();
+  }, [imagePath]);
+
   return (
     <article className="card">
       <header className="card-header">
@@ -8,7 +23,7 @@ function Card({ date, title, image, description }) {
         <h2>{title}</h2>
       </header>
       <div className="card-image-container">
-        <img src={image} alt={title} />
+        {image && <img src={image} alt={title} />}
       </div>
       <p>{description}</p>
     </article>
