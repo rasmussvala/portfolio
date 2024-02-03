@@ -12,16 +12,16 @@
     "description": "Procedurally created planet using noise to generate terrain, clouds, and stars."
   },
   {
-    "date": "October 2023",
-    "title": "Global Illumination in C++",
-    "image": "./assets/raytracing.png",
-    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
+    "date": "June 2023",
+    "title": "Web App for Selecting Courses",
+    "image": "./assets/kandidat.jpg",
+    "description": "Bachelor's thesis on a web app for selecting master's courses, created with React.js and Google Firebase to manage users and the database."
   },
   {
-    "date": "October 2023",
-    "title": "Global Illumination in C++",
-    "image": "./assets/raytracing.png",
-    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
+    "date": "December 2022",
+    "title": "Animated Short in Blender",
+    "image": "./assets/blender.jpg",
+    "description": "An animated short film made from Scratch in Blender where i made animations, lighting and props. "
   },
   {
     "date": "October 2023",
