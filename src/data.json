@@ -2,13 +2,31 @@
   {
     "date": "October 2023",
     "title": "Global Illumination in C++",
-    "image": "./assets/raytracing-crop.png",
+    "image": "./assets/raytracing.png",
     "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
   },
   {
-    "date": "21 juni 2023",
-    "title": "Detta är en text som är i h2",
-    "image": "./assets/raytracing-crop.png",
-    "description": "Detta är brödtext som är i p"
+    "date": "December 2023",
+    "title": "Procedural Planet in THREE.js",
+    "image": "./assets/planet.jpg",
+    "description": "Procedurally created planet using noise to generate terrain, clouds, and stars."
+  },
+  {
+    "date": "October 2023",
+    "title": "Global Illumination in C++",
+    "image": "./assets/raytracing.png",
+    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
+  },
+  {
+    "date": "October 2023",
+    "title": "Global Illumination in C++",
+    "image": "./assets/raytracing.png",
+    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
+  },
+  {
+    "date": "October 2023",
+    "title": "Global Illumination in C++",
+    "image": "./assets/raytracing.png",
+    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
   }
 ]

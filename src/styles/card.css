@@ -18,6 +18,19 @@ body {
   font-family: "DM Mono", monospace;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
 .card-list {
   display: flex;
   padding: 3rem;
@@ -25,7 +38,7 @@ body {
 }
 
 .card-list::-webkit-scrollbar {
-  width: 6px;
+  height: 6px;
 }
 
 .card-list::-webkit-scrollbar-thumb {
@@ -111,6 +124,8 @@ body {
 }
 
 .header {
+  padding-left: 5rem;
+  padding-right: 5rem;
   display: flex;
   align-items: center;
 }
@@ -183,6 +198,8 @@ body {
   .header {
     flex-direction: column-reverse;
     align-items: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .text-container,
