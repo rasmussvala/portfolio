@@ -23,7 +23,7 @@
     --accent-color: #7a7a8c;
     --scrollbar-track-color: var(--background-color);
     --scrollbar-thumb-color: #846d60;
-    --card-shadow-color: #00000013;
+    --card-shadow-color: #00000024;
     --card-hover-transform: translateY(-1rem);
   }
 }

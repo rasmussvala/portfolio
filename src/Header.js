@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "./assets/profile-pic.png";
+import profileImage from "./assets/profile-pic2.jpg";
 import Links from "./Links";
 
 export default function Header() {
