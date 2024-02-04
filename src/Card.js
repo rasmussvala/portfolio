@@ -25,7 +25,7 @@ function Card({ date, title, image: imagePath, description }) {
       <div className="card-image-container">
         {image && <img src={image} alt={title} />}
       </div>
-      <p>{description}</p>
+      <p dangerouslySetInnerHTML={{ __html: description }} />
     </article>
   );
 }

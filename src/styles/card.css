@@ -28,6 +28,19 @@
   }
 }
 
+/* Link Colors */
+a {
+  color: var(--secondary-color); /* Default link color */
+}
+
+a:visited {
+  color: var(--accent-color); /* Visited link color */
+}
+
+a:hover {
+  color: var(--primary-color); /* Hover link color */
+}
+
 body {
   padding: 0;
   margin: 0;

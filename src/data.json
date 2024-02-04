@@ -21,12 +21,12 @@
     "date": "December 2022",
     "title": "Animated Short in Blender",
     "image": "./assets/blender.jpg",
-    "description": "Created an animated short film from scratch in Blender, where I handled animations, lighting, and props."
+    "description": "An animated short film created from scratch in Blender, where I handled some animations, lighting, and props. Link to the short film: <a href='https://youtu.be/ffHXlyJ5MhI?si=IY26SvpH5QtPdGHY' target='_blank'>youtube.com/animated-short</a>"
   },
   {
-    "date": "October 2023",
-    "title": "Global Illumination in C++",
-    "image": "./assets/raytracing.png",
-    "description": "C++ crafted ray tracer. Simulates light, shadows, and reflections."
+    "date": "October 2022",
+    "title": "Singing Game in P5.js",
+    "image": "./assets/ljudfysik.jpg",
+    "description": "This is a singing game created using the JavaScript library p5.js, designed for creative coding. I primarily managed user inputs. Visit the link for more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
   }
 ]
