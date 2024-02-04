@@ -25,8 +25,14 @@
   },
   {
     "date": "October 2022",
-    "title": "Singing Game in P5.js",
+    "title": "Singing Web Game in P5.js",
     "image": "./assets/ljudfysik.jpg",
     "description": "This is a singing game created using the JavaScript library p5.js, designed for creative coding. I primarily managed user inputs. Visit the link for more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
+  },
+  {
+    "date": "December 2023",
+    "title": "Chatbot using Machine Learning",
+    "image": "./assets/chatbot.jpg",
+    "description": "A Python chatbot using TF-IDF and cosine similarity. The chatbots processes a conversational dataset, extracts features, and engages in text-based conversations."
   }
 ]
