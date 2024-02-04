@@ -14,8 +14,9 @@ export default function Header() {
             passion for computer graphics and web development and when I'm not
             coding, you might just find me at 'Pub Vattentornet', appreciating a
             good beer and catching up with friends. 🍻 My aim here is to keep
-            things simple and showcase a glimpse of some of the work I've done.
-            Feel free to contact me anytime via my social networks. 😊{" "}
+            things simple and showcase a glimpse of some of the work I've done
+            alone or with friends. Feel free to contact me anytime via my social
+            networks. 😊{" "}
           </p>
           <br></br>
           <Links />
