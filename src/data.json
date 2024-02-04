@@ -34,5 +34,17 @@
     "title": "Chatbot using Machine Learning",
     "image": "./assets/chatbot.jpg",
     "description": "A Python chatbot using TF-IDF and cosine similarity. The chatbots processes a conversational dataset, extracts features, and engages in text-based conversations."
+  },
+  {
+    "date": "Mars 2023",
+    "title": "Curling Simulation in Unreal Engine 5",
+    "image": "./assets/curling.jpg",
+    "description": "This project investigates the movement of curling stones, employing Euler Approximation to simulate friction and the curling effect. Made in Unreal Engine 5."
+  },
+  {
+    "date": "February 2022",
+    "title": "The Iconic Blender Guru Donut",
+    "image": "./assets/donut.jpg",
+    "description": "I followed the The Blender Guru Donut tutorial that covers basics like modeling, texturing, and rendering in Blender, helping users create a detailed donut scene."
   }
 ]
