@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[860],{860:function(p,a,e){p.exports=e.p+"static/media/blender.0db248a1a8d3fd4977af.jpg"}}]);

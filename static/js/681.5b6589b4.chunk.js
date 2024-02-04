@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[681],{681:function(p,c,e){p.exports=e.p+"static/media/curling.6f99290a6c7ed16dc72b.jpg"}}]);

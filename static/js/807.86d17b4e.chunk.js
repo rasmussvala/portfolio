@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[807],{807:function(p,c,t){p.exports=t.p+"static/media/chatbot.64b22354b02c8464c075.jpg"}}]);

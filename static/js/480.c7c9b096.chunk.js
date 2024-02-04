@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[480],{480:function(c,p,a){c.exports=a.p+"static/media/raytracing.31ccbd09fcf35b065ccd.png"}}]);

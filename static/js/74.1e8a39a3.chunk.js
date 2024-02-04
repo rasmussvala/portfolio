@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[74],{74:function(e,p,c){e.exports=c.p+"static/media/kandidat.30e240fecce8b0c4c34f.jpg"}}]);

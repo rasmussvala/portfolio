@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[482],{482:function(p,a,e){p.exports=e.p+"static/media/ljudfysik.78b6a481c044d3a0fe65.jpg"}}]);
