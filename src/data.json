@@ -9,13 +9,13 @@
     "date": "December 2023",
     "title": "Procedural Planet in THREE.js",
     "image": "./assets/planet.jpg",
-    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js."
+    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>proceduralplanet.vercel.app</a>"
   },
   {
     "date": "June 2023",
     "title": "Web App for Selecting Courses",
     "image": "./assets/kandidat.jpg",
-    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js for UI and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a> "
+    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js for UI and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a>"
   },
   {
     "date": "December 2022",
