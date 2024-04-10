@@ -10,7 +10,7 @@ This portfolio is a WIP to showcase my projects, skills, and experiences in [Med
 
 - **Email**: rasmus.svala@hotmail.com
 - **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
-- **Portfolio Website**: rasmussvala.github.io/portfolio/
+- **Portfolio Website**: https://portfolio-rasmussvala.vercel.app/
 
 Feel free to get in touch for any questions, collaborations, or feedback!
 
