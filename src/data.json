@@ -1,0 +1,50 @@
+[
+  {
+    "date": "October 2023",
+    "title": "Global Illumination in C++",
+    "image": "./assets/raytracing.png",
+    "description": "Crafted a ray tracer in C++ that simulates light, shadows, and reflections."
+  },
+  {
+    "date": "December 2023",
+    "title": "Procedural Planet in THREE.js",
+    "image": "./assets/planet.jpg",
+    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js."
+  },
+  {
+    "date": "June 2023",
+    "title": "Web App for Selecting Courses",
+    "image": "./assets/kandidat.jpg",
+    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js for UI and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a> "
+  },
+  {
+    "date": "December 2022",
+    "title": "Animated Short in Blender",
+    "image": "./assets/blender.jpg",
+    "description": "Produced an animated short film from scratch in Blender, where responsibilities included animation, lighting, and props. Watch the short film: <a href='https://youtu.be/ffHXlyJ5MhI?si=IY26SvpH5QtPdGHY' target='_blank'>youtube.com/animated-short</a>"
+  },
+  {
+    "date": "October 2022",
+    "title": "Singing Web Game in P5.js",
+    "image": "./assets/ljudfysik.jpg",
+    "description": "Developed a singing game using the JavaScript library p5.js, designed for creative coding. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
+  },
+  {
+    "date": "December 2023",
+    "title": "Chatbot using Machine Learning",
+    "image": "./assets/chatbot.jpg",
+    "description": "Implemented a Python chatbot using TF-IDF and cosine similarity. Processes conversational datasets, extracts features, and engages in text-based conversations."
+  },
+  {
+    "date": "Mars 2023",
+    "title": "Curling Simulation in Unreal Engine 5",
+    "image": "./assets/curling.jpg",
+    "description": "Investigated the movement of curling stones, employing Euler Approximation to simulate friction and the curling effect. Developed in Unreal Engine 5."
+  },
+  {
+    "date": "February 2022",
+    "title": "The Iconic Blender Guru Donut",
+    "image": "./assets/donut.jpg",
+    "description": "Followed The Blender Guru Donut tutorial covering basics like modeling, texturing, and rendering in Blender, helping users in creating a detailed donut scene."
+  }
+]

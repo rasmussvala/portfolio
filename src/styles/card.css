@@ -1,0 +1,247 @@
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: #14171d;
+    --primary-color: #ff8a00;
+    --secondary-color: #e52e71;
+    --accent-color: #7a7a8c;
+    --scrollbar-track-color: var(--background-color);
+    --scrollbar-thumb-color: #2d3642;
+    --card-shadow-color: #00000062;
+    --card-hover-transform: translateY(-1rem);
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #846d60;
+    --background-color: white;
+    --primary-color: #68564c;
+    --secondary-color: #68564c;
+    --accent-color: #7a7a8c;
+    --scrollbar-track-color: var(--background-color);
+    --scrollbar-thumb-color: #846d60;
+    --card-shadow-color: #00000024;
+    --card-hover-transform: translateY(-1rem);
+  }
+}
+
+/* Link Colors */
+a {
+  color: var(--secondary-color); /* Default link color */
+}
+
+a:visited {
+  color: var(--accent-color); /* Visited link color */
+}
+
+a:hover {
+  color: var(--primary-color); /* Hover link color */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "DM Mono", monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+.card-list {
+  display: flex;
+  padding: 3rem;
+  overflow-x: scroll;
+}
+
+.card-list::-webkit-scrollbar {
+  height: 12px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 3px;
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+.card {
+  height: 450px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: var(--background-color);
+  box-shadow: -0.5rem 0 1.5rem var(--card-shadow-color);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  margin: 0;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+}
+
+.card:focus-within ~ .card,
+.card:hover ~ .card {
+  transform: translateX(130px);
+}
+
+.card:hover {
+  transform: var(--card-hover-transform);
+}
+
+.card:not(:first-child) {
+  margin-left: -130px;
+}
+
+.card-header {
+  margin-bottom: 0;
+}
+
+.card-header p {
+  font-size: 14px;
+  margin: 0 0 1rem;
+  color: var(--accent-color);
+}
+
+.card-header h2 {
+  font-size: 20px;
+  margin: 0.25rem 0 auto;
+  color: var(--secondary-color);
+  border: 0;
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.card-image-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  object-fit: cover;
+}
+
+.card-image-container img {
+  width: 100%;
+}
+
+.header {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-container p {
+  line-height: 1.5; /* Adjust the value to increase or decrease spacing */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.profile-image {
+  width: 300px;
+  height: 300px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 1.5rem var(--card-shadow-color);
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links a:hover {
+  color: var(--primary-color); /* Change to your preferred hover color */
+}
+
+/* For screens wider than 900px (desktop) */
+@media (min-width: 901px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .text-container {
+    order: 1;
+    padding: 20px;
+  }
+
+  .image-container {
+    order: 2;
+    padding: 20px;
+  }
+}
+
+/* For screens 900px and narrower (mobile) */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .text-container,
+  .image-container {
+    order: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-top: 10px;
+  }
+}
