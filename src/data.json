@@ -9,7 +9,7 @@
     "date": "December 2023",
     "title": "Procedural Planet in THREE.js",
     "image": "./assets/planet.jpg",
-    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>proceduralplanet.vercel.app</a>"
+    "description": "Created a procedurally generated planet using noise to generate terrain, clouds, and stars in THREE.js. Try it here: <a href='https://proceduralplanet.vercel.app/' target='_blank'>procedural-planet.vercel.app</a>"
   },
   {
     "date": "June 2023",
