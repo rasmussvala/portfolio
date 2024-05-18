@@ -13,5 +13,3 @@ This portfolio is a WIP to showcase my projects, skills, and experiences in [Med
 - **Portfolio Website**: https://portfolio-rasmussvala.vercel.app/
 
 Feel free to get in touch for any questions, collaborations, or feedback!
-
-![Namnlös](https://github.com/rasmussvala/portfolio/assets/91534734/3a9e1b79-fd35-49be-8b1b-bf1f727e72a3)
