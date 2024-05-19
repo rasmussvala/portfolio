@@ -1,4 +1,4 @@
-import "./styles/card.css";
+import "./styles/global.css";
 import projects from "./data.json";
 import Card from "./Card.js";
 import Header from "./Header.js";
