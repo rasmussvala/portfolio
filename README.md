@@ -1,4 +1,4 @@
-# Rasmus' Portfolio
+# My Portfolio
 
 This repository contains the code for my personal portfolio website.
 
