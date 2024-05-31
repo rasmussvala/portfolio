@@ -6,8 +6,6 @@
     --primary-color: #ff8a00;
     --primary-color: #e52e71;
     --accent-color: #7a7a8c;
-    --scrollbar-track-color: var(--background-color);
-    --scrollbar-thumb-color: #2d3642;
     --card-shadow-color: #00000062;
     --card-hover-transform: translateY(-1rem);
   }
@@ -19,9 +17,7 @@
     --text-color: #000000;
     --background-color: #fffbf4;
     --primary-color: #fa4411;
-    --accent-color: #7a7a8c;
-    --scrollbar-track-color: var(--background-color);
-    --scrollbar-thumb-color: #846d60;
+    --accent-color: #6f6350;
     --card-shadow-color: #00000010;
     --card-hover-transform: translateY(-1rem);
   }
