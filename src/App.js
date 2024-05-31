@@ -3,6 +3,8 @@ import projects from "./data.json";
 import Card from "./Card.js";
 import Header from "./Header.js";
 
+import { useState, useEffect } from "react";
+
 // Convert date strings to a comparable format
 const parseDate = (dateString) => {
   const [month, year] = dateString.split(" ");
@@ -10,15 +12,23 @@ const parseDate = (dateString) => {
 };
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   // Sort the projects by date
   const sortedProjects = projects
     .slice()
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
+  // Set loaded to true
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <>
+    <div className={`app ${isLoaded ? "loaded" : ""}`}>
       <Header />
 
+      <h2>Projects</h2>
       <section className="card-list">
         {sortedProjects.map((project, index) => (
           <Card
@@ -30,7 +40,7 @@ function App() {
           />
         ))}
       </section>
-    </>
+    </div>
   );
 }
 

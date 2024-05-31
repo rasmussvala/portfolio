@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "./assets/profile-pic2.jpg";
+import profileImage from "./assets/profile-pic1.jpg";
 import Links from "./Links";
 
 export default function Header() {
@@ -9,14 +9,8 @@ export default function Header() {
         <div className="text-container">
           <h1>Rasmus Svala</h1>
           <p>
-            Hey there! 👋 I'm Rasmus, a 4th year Master of Science student in
-            Media Technology and Engineering, based in Sweden. I've got a
-            passion for computer graphics and web development and when I'm not
-            coding, you might just find me at 'Pub Vattentornet', appreciating a
-            good beer and catching up with friends. 🍻 My aim here is to keep
-            things simple and showcase a glimpse of some of the work I've done
-            alone or with friends. Feel free to contact me anytime via my social
-            networks. 😊{" "}
+            Hi, my name is Rasmus and I'm a fourth-year MSc student in Media
+            Technology and Engineering, based in Norrköping, Sweden.
           </p>
           <br></br>
           <Links />
