@@ -12,7 +12,6 @@ export default function Header() {
             Hi, my name is Rasmus and I'm a fourth-year MSc student in Media
             Technology and Engineering, based in Norrköping, Sweden.
           </p>
-          <br></br>
           <Links />
         </div>
         <div className="image-container">
