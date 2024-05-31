@@ -46,5 +46,11 @@
     "title": "The Iconic Blender Guru Donut",
     "image": "./assets/donut.jpg",
     "description": "Followed The Blender Guru Donut tutorial covering basics like modeling, texturing, and rendering in Blender, helping users in creating a detailed donut scene."
+  },
+  {
+    "date": "June 2024",
+    "title": "Online Multiplayer Mini Golf",
+    "image": "./assets/webgolf.png",
+    "description": "A web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React as the frontend and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>"
   }
 ]
