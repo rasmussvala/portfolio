@@ -3,10 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rasmus Svala - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <title>localhost</title>
+    <style>
+      body {
+        height: 200vh; /* Makes the page scrollable */
+      }
+      video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <video id="video" src="video.mp4" muted></video>
+
+    <script>
+      const video = document.getElementById("video");
+      window.addEventListener("scroll", () => {
+        const scrollFraction =
+          window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        const videoTime = scrollFraction * video.duration;
+        video.currentTime = videoTime;
+      });
+    </script>
   </body>
 </html>
