@@ -1,26 +1,10 @@
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: white;
-    --background-color: #14171d;
-    --primary-color: #ff8a00;
-    --primary-color: #e52e71;
-    --accent-color: #7a7a8c;
-    --card-shadow-color: #00000062;
-    --card-hover-transform: translateY(-1rem);
-  }
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --text-color: #000000;
-    --background-color: #fffbf4;
-    --primary-color: #fa4411;
-    --accent-color: #6f6350;
-    --card-shadow-color: #00000010;
-    --card-hover-transform: translateY(-1rem);
-  }
+:root {
+  --text-color: #000000;
+  --background-color: #fffbf4;
+  --primary-color: #fa4411;
+  --accent-color: #6f6350;
+  --card-shadow-color: #00000010;
+  --card-hover-transform: translateY(-1rem);
 }
 
 h1 {
