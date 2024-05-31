@@ -18,13 +18,13 @@ function Card({ date, title, image: imagePath, description }) {
 
   return (
     <article className="card">
-      <header className="card-header">
-        <p>{date}</p>
-        <h2>{title}</h2>
-      </header>
       <div className="card-image-container">
         {image && <img src={image} alt={title} />}
       </div>
+      <header className="card-header">
+        <p style={{ fontWeight: "bold" }}>{title}</p>
+        <p>{date}</p>
+      </header>
       <p dangerouslySetInnerHTML={{ __html: description }} />
     </article>
   );

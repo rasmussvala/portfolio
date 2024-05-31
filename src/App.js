@@ -28,6 +28,7 @@ function App() {
     <div className={`app ${isLoaded ? "loaded" : ""}`}>
       <Header />
 
+      <h2>Projects</h2>
       <section className="card-list">
         {sortedProjects.map((project, index) => (
           <Card
