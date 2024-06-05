@@ -3,7 +3,7 @@
     "date": "October 2023",
     "title": "Global Illumination in C++",
     "image": "./assets/raytracing.png",
-    "description": "Crafted a ray tracer in C++ that simulates light, shadows, and reflections."
+    "description": "Crafted a Monte Carlo ray tracer in C++ that simulates realistic global illumination featuring transparent, reflective, and Lambertian surfaces."
   },
   {
     "date": "December 2023",
