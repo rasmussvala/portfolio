@@ -98,6 +98,8 @@ body {
   gap: 2rem;
   padding-left: 5px;
   padding-right: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .social-links a {
