@@ -1,10 +1,9 @@
 :root {
-  --text-color: #000000;
+  --text-color: #121212;
   --background-color: #fffbf4;
-  --primary-color: #fa4411;
+  --primary-color: #fa4411; /*alt 2: #394390*/
   --accent-color: #6f6350;
   --card-shadow-color: #00000010;
-  --card-hover-transform: translateY(-1rem);
 }
 
 h1 {
@@ -20,7 +19,7 @@ h2 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   padding-left: 24px;
-  padding-top: 24px;
+  padding-top: 30px;
 }
 
 /* Link Colors */
@@ -50,7 +49,7 @@ body {
 /* Star animation */
 .app {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 1.5s ease-in;
 }
 
 /* Style after  animation */
@@ -71,6 +70,7 @@ body {
 
 .text-container p {
   line-height: 1.7; /* Adjust the value to increase or decrease spacing */
+  font-size: 20px;
 }
 
 .image-container {
@@ -95,20 +95,13 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 10px;
-  padding-top: 10px;
+  gap: 2rem;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .social-links a {
   text-decoration: none;
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.social-links a:hover {
-  color: var(--primary-color); /* Change to your preferred hover color */
 }
 
 /* For screens wider than 900px (desktop) */
@@ -116,6 +109,7 @@ body {
   .header p {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
+    margin-top: 0;
   }
 
   .social-links {

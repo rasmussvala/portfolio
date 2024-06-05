@@ -2,6 +2,7 @@ import "./styles/global.css";
 import projects from "./data.json";
 import Card from "./Card.js";
 import Header from "./Header.js";
+import Links from "./Links";
 
 import { useState, useEffect } from "react";
 
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className={`app ${isLoaded ? "loaded" : ""}`}>
       <Header />
+      <Links />
 
       <h2>Projects</h2>
       <section className="card-list">
