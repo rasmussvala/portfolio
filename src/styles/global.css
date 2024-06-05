@@ -158,8 +158,6 @@ body {
   padding-right: 1rem;
   padding-bottom: 10rem;
 
-  border-radius: 16px;
-  background: var(--background-color);
   display: flex;
   flex-direction: column;
   transition: 0.2s;
