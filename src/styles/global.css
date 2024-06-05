@@ -1,10 +1,9 @@
 :root {
-  --text-color: #000000;
+  --text-color: #121212;
   --background-color: #fffbf4;
-  --primary-color: #fa4411;
+  --primary-color: #fa4411; /*alt 2: #394390*/
   --accent-color: #6f6350;
   --card-shadow-color: #00000010;
-  --card-hover-transform: translateY(-1rem);
 }
 
 h1 {
@@ -12,6 +11,7 @@ h1 {
   margin: auto;
   font-family: "Playfair Display", serif;
   text-align: center;
+  font-weight: 300; /* Adjust the weight value as needed */
 }
 
 h2 {
@@ -20,7 +20,8 @@ h2 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   padding-left: 24px;
-  padding-top: 24px;
+  padding-top: 30px;
+  font-weight: 300; /* Adjust the weight value as needed */
 }
 
 /* Link Colors */
@@ -50,7 +51,7 @@ body {
 /* Star animation */
 .app {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 1.5s ease-in;
 }
 
 /* Style after  animation */
@@ -71,6 +72,7 @@ body {
 
 .text-container p {
   line-height: 1.7; /* Adjust the value to increase or decrease spacing */
+  font-size: 20px;
 }
 
 .image-container {
@@ -95,20 +97,15 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 10px;
-  padding-top: 10px;
+  gap: 1.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .social-links a {
   text-decoration: none;
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.social-links a:hover {
-  color: var(--primary-color); /* Change to your preferred hover color */
 }
 
 /* For screens wider than 900px (desktop) */
@@ -116,6 +113,7 @@ body {
   .header p {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
+    margin-top: 0;
   }
 
   .social-links {
@@ -162,8 +160,6 @@ body {
   padding-right: 1rem;
   padding-bottom: 10rem;
 
-  border-radius: 16px;
-  background: var(--background-color);
   display: flex;
   flex-direction: column;
   transition: 0.2s;

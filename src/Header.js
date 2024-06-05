@@ -1,6 +1,5 @@
 import React from "react";
 import profileImage from "./assets/profile-pic1.jpg";
-import Links from "./Links";
 
 export default function Header() {
   return (
@@ -12,7 +11,6 @@ export default function Header() {
             Hi, my name is Rasmus and I'm a fourth-year MSc student in Media
             Technology and Engineering, based in Norrköping, Sweden.
           </p>
-          <Links />
         </div>
         <div className="image-container">
           <div className="profile-image">
