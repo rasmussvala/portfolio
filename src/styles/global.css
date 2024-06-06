@@ -60,6 +60,18 @@ body {
   opacity: 1;
 }
 
+.about-me-text {
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+.about-me-text p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
 .text-container {
   text-align: center;
 }
@@ -120,6 +132,11 @@ body {
     padding-left: 0;
   }
 
+  .about-me-text {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .card {
     min-width: 400px;
   }
@@ -153,6 +170,7 @@ body {
 
   h2 {
     padding-left: 1rem;
+    padding-right: 1rem;
     font-size: 2rem;
   }
 
