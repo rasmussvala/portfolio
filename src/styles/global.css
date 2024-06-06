@@ -9,6 +9,7 @@
 h1 {
   color: var(--primary-color);
   margin: auto;
+  padding: 0%;
   font-family: "Playfair Display", serif;
   text-align: center;
   font-weight: 300; /* Adjust the weight value as needed */
@@ -59,14 +60,7 @@ body {
   opacity: 1;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  flex-direction: column-reverse;
-}
-
 .text-container {
-  flex: 1;
   text-align: center;
 }
 
@@ -76,9 +70,9 @@ body {
 }
 
 .image-container {
-  flex: 1;
+  justify-content: center;
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
   padding-top: 150px;
 }
 
@@ -95,9 +89,9 @@ body {
 
 .social-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding-left: 16px;
   padding-right: 16px;
   overflow-x: auto;
@@ -111,14 +105,14 @@ body {
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header p {
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 3rem;
+    padding-right: 5rem;
     margin-top: 0;
   }
 
   .social-links {
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    justify-content: center;
+    padding-top: 10px;
   }
 
   h1 {
@@ -138,8 +132,23 @@ body {
     padding-right: 1rem;
   }
 
+  .header p {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  .image-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   h1 {
     font-size: 3rem;
+    text-align: left;
   }
 
   h2 {
