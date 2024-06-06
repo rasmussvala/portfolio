@@ -15,7 +15,7 @@
     "date": "June 2023",
     "title": "Web App for Selecting Courses",
     "image": "./assets/kandidat.jpg",
-    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js for UI and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a>"
+    "description": "Developed a web app for selecting master's courses as a Bachelor's thesis. Created with React.js and Google Firebase for user management and database. Explore: <a href='https://litheval.vercel.app/' target='_blank'>litheval.vercel.app</a>"
   },
   {
     "date": "December 2022",
@@ -27,30 +27,30 @@
     "date": "October 2022",
     "title": "Singing Web Game in P5.js",
     "image": "./assets/ljudfysik.jpg",
-    "description": "Developed a singing game using the JavaScript library p5.js, designed for creative coding. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
+    "description": "Developed a singing game using the JavaScript library p5.js, where you have to collect candies by using your voice. Primarily managed user inputs. Explore more: <a href='https://spookypannkaka.itch.io/sjungande-phadderister' target='_blank'>itch.io/sjungande-phadderister</a>"
   },
   {
     "date": "December 2023",
-    "title": "Chatbot using Machine Learning",
+    "title": "Chatbot using ML",
     "image": "./assets/chatbot.jpg",
     "description": "Implemented a Python chatbot using TF-IDF and cosine similarity. Processes conversational datasets, extracts features, and engages in text-based conversations."
   },
   {
     "date": "Mars 2023",
-    "title": "Curling Simulation in Unreal Engine 5",
+    "title": "Curling Simulation in UE5",
     "image": "./assets/curling.jpg",
-    "description": "Investigated the movement of curling stones, employing Euler Approximation to simulate friction and the curling effect. Developed in Unreal Engine 5."
+    "description": "Investigated the movement of curling stones, employing Euler Approximation to simulate friction and curling effect. Developed in Unreal Engine 5."
   },
   {
     "date": "February 2022",
-    "title": "The Iconic Blender Guru Donut",
+    "title": "The Blender Guru Donut",
     "image": "./assets/donut.jpg",
-    "description": "Followed The Blender Guru Donut tutorial covering basics like modeling, texturing, and rendering in Blender, helping users in creating a detailed donut scene."
+    "description": "Followed The Blender Guru Donut tutorial that covers basics like modeling, texturing, and rendering in Blender. Learned how creating a detailed donut scene."
   },
   {
     "date": "June 2024",
     "title": "Online Multiplayer Mini Golf",
     "image": "./assets/webgolf.png",
-    "description": "A web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React as the frontend and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>"
+    "description": "Created a web-based multiplayer golf game where players can compete against each other in real-time. The game is created with React and Google Firebase for authentication and data management. The golf game itself is built using Three.js. Check it out here: <a href='https://webgolf.vercel.app/' target='_blank'>webgolf.vercel.app</a>"
   }
 ]
