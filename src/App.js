@@ -34,13 +34,12 @@ function App() {
         <h2>About me</h2>
         <div className="about-me-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I was born in Tranås, Sweden, in the year 2000. I currently live in
+            Norrköping, where I study at Linköpings University. I enjoy coding
+            and learning new things. I've tried a lot of programming languages
+            and so far I have C++, JavaScript, React, HTML, CSS, and some
+            Git/GitHub under my belt. When I'm not coding I also enjoy playing
+            video games and working out at the local gym.
           </p>
         </div>
 
