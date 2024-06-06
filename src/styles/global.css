@@ -114,6 +114,12 @@ body {
   text-decoration: none;
 }
 
+/* For screens wider than 1300px (large desktop) */
+.content-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header p {
