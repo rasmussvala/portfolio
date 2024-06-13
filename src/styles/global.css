@@ -64,7 +64,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
   line-height: 1.7;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .about-me-text p {
@@ -78,7 +78,7 @@ body {
 
 .text-container p {
   line-height: 1.7; /* Adjust the value to increase or decrease spacing */
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .image-container {
@@ -134,7 +134,7 @@ body {
   }
 
   h1 {
-    font-size: 9rem;
+    font-size: 8rem;
     padding-left: 0;
   }
 
@@ -217,14 +217,6 @@ body {
 .card-header p {
   margin: 0;
   color: var(--text-color);
-}
-
-.card-header h2 {
-  font-size: 20px;
-  margin: 0.25rem 0 auto;
-  color: var(--text-color);
-  border: 0;
-  display: inline-block;
 }
 
 .card-image-container {
