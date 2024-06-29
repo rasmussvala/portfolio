@@ -7,6 +7,15 @@
   --accent-color: #6f6350;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fffbf4;
+    --background-color: #121212;
+    --primary-color: #394390; /*alt 2: #394390*/
+    --accent-color: #2e2e2e;
+  }
+}
+
 h1 {
   color: var(--primary-color);
   margin: auto;
@@ -38,6 +47,11 @@ footer {
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 8rem;
+}
+
+/* Fill LeetCode logo correctly */
+path {
+  fill: var(--background-color);
 }
 
 body {
@@ -120,6 +134,13 @@ body {
 
 .social-links a {
   text-decoration: none;
+  background: var(--text-color);
+  color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  border-radius: 20px;
+  align-items: center;
 }
 
 /* For screens wider than 1000px (large desktop) */

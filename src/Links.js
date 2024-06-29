@@ -4,16 +4,6 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Links() {
-  const linkStyle = {
-    background: "#121212",
-    color: "#fffbf4",
-    display: "flex",
-    flexDirection: "row",
-    padding: "10px 20px",
-    borderRadius: "20px",
-    alignItems: "center",
-  };
-
   return (
     <div className="social-links">
       <a
@@ -21,7 +11,6 @@ export default function Links() {
         className="social-link"
         target="_blank"
         rel="noopener noreferrer"
-        style={linkStyle}
       >
         <FontAwesomeIcon icon={faGithub} style={{ marginRight: "10px" }} />
         GitHub
@@ -30,12 +19,11 @@ export default function Links() {
         href="https://www.linkedin.com/in/rasmus-svala/"
         target="_blank"
         rel="noopener noreferrer"
-        style={linkStyle}
       >
         <FontAwesomeIcon icon={faLinkedin} style={{ marginRight: "10px" }} />
         LinkedIn
       </a>
-      <a href="mailto:rasmus.svala@hotmail.com" style={linkStyle}>
+      <a href="mailto:rasmus.svala@hotmail.com">
         <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: "10px" }} />
         Email
       </a>
@@ -43,7 +31,6 @@ export default function Links() {
         href="https://leetcode.com/u/rasmussvala/"
         target="_blank"
         rel="noopener noreferrer"
-        style={linkStyle}
       >
         <svg
           height="32"
