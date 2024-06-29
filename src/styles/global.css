@@ -1,28 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Roboto");
+
 :root {
   --text-color: #121212;
   --background-color: #fffbf4;
   --primary-color: #fa4411; /*alt 2: #394390*/
   --accent-color: #6f6350;
-  --card-shadow-color: #00000010;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fffbf4;
+    --background-color: #121212;
+    --primary-color: #394390; /*alt 2: #394390*/
+    --accent-color: #2e2e2e;
+  }
 }
 
 h1 {
   color: var(--primary-color);
   margin: auto;
   padding: 0%;
-  font-family: "Playfair Display", serif;
+  font-family: "Anton", sans-serif;
   text-align: center;
-  font-weight: 300; /* Adjust the weight value as needed */
+  font-weight: 300;
 }
 
 h2 {
   color: var(--text-color);
   margin: auto;
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
   padding-left: 24px;
   padding-top: 30px;
-  font-weight: 300; /* Adjust the weight value as needed */
+  font-weight: 300;
 }
 
 /* Link Colors */
@@ -30,6 +40,18 @@ a,
 a:visited,
 a:hover {
   color: var(--primary-color); /* Default link color */
+}
+
+footer {
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 8rem;
+}
+
+/* Fill LeetCode logo correctly */
+path {
+  fill: var(--background-color);
 }
 
 body {
@@ -85,7 +107,7 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
 .profile-image {
@@ -112,20 +134,27 @@ body {
 
 .social-links a {
   text-decoration: none;
+  background: var(--text-color);
+  color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  border-radius: 20px;
+  align-items: center;
 }
 
-/* For screens wider than 1300px (large desktop) */
+/* For screens wider than 1000px (large desktop) */
 .content-container {
-  max-width: 1300px;
+  max-width: 1000px;
   margin: auto;
 }
 
 /* For screens wider than 900px (desktop) */
 @media (min-width: 901px) {
   .header p {
-    padding-left: 3rem;
-    padding-right: 5rem;
-    margin-top: 0;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 1em;
   }
 
   .social-links {
@@ -134,7 +163,7 @@ body {
   }
 
   h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     padding-left: 0;
   }
 
@@ -165,8 +194,7 @@ body {
   }
 
   .image-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
   }
 
   h1 {
@@ -191,7 +219,6 @@ body {
   height: 450px;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 10rem;
 
   display: flex;
   flex-direction: column;
@@ -205,6 +232,8 @@ body {
 .card-list {
   display: flex;
   overflow-x: scroll;
+  border-left: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
 }
 
 .card-header {
