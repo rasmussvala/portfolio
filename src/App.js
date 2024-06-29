@@ -56,6 +56,12 @@ function App() {
           ))}
         </section>
       </div>
+      <footer>
+        <p>
+          2024 Designed and created by me. Find the source code on{" "}
+          <a href="https://github.com/rasmussvala/Portfolio">GitHub</a>.
+        </p>
+      </footer>
     </div>
   );
 }
