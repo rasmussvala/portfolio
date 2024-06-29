@@ -37,6 +37,7 @@ footer {
   text-align: center;
   padding-left: 1em;
   padding-right: 1em;
+  padding-top: 8rem;
 }
 
 body {
@@ -197,7 +198,6 @@ body {
   height: 450px;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 10rem;
 
   display: flex;
   flex-direction: column;
@@ -211,6 +211,8 @@ body {
 .card-list {
   display: flex;
   overflow-x: scroll;
+  border-left: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
 }
 
 .card-header {
