@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Intro from '../components/Intro.astro';
+import ProjectFilter from '../components/ProjectFilter.astro';
+import { profile } from '../profile';
+---
+
+<Base
+	title={`${profile.name} · ${profile.role}`}
+	description={profile.description}
+>
+	<Nav />
+	<main>
+		<Intro />
+		<ProjectFilter />
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--content);
+		margin: 0 auto;
+		padding: 0 var(--gutter);
+	}
+</style>

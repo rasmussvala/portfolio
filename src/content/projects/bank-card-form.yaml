@@ -1,0 +1,13 @@
+title: Bank Card Form
+group: university
+kind: Package
+year: 2024
+note: npm
+blurb: A React Native card input with a live card preview.
+image: ../../assets/projects/bank-card-form.jpeg
+treatment: plate
+plate: '#e6e3f5'
+featured: true
+links:
+  live: https://www.npmjs.com/package/react-native-bank-card-form
+  code: https://github.com/Grantallkotten/react-native-bank-card-form

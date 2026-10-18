@@ -1,0 +1,9 @@
+title: Singing Game
+group: university
+kind: Game
+year: 2022
+blurb: A p5.js game you control with your voice.
+image: ../../assets/projects/ljudfysik.jpg
+links:
+  live: https://spookypannkaka.itch.io/sjungande-phadderister
+  code: https://github.com/spookypannkaka/Sjungande-Phadderister

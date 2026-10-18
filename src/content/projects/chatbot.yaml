@@ -1,0 +1,9 @@
+title: Chatbot
+group: university
+kind: ML
+year: 2023
+course: TNM108
+blurb: A TF-IDF chatbot in Python.
+image: ../../assets/projects/chatbot.svg
+links:
+  code: https://github.com/rasmussvala/TNM108-Machine-Learning-for-Social-Media/tree/main/Project

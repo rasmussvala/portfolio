@@ -1,0 +1,314 @@
+---
+// A stippled ringed planet on a dark tile, lit by a light that moves on a critically damped spring.
+// Modes (space separated): "cursor" follows the mouse anywhere on the page, "drag" lets you grab
+// the tile and move the light 1:1 with momentum on release (the touch interaction).
+interface Props {
+	size?: number;
+	modes?: string;
+}
+
+const { size = 112, modes = 'cursor drag' } = Astro.props;
+---
+
+<rs-mark style={`--size: ${size}px`} data-size={size} data-modes={modes} aria-hidden="true">
+	<canvas></canvas>
+</rs-mark>
+
+<script>
+	const clamp = (v: number, lo = -1, hi = 1) => Math.max(lo, Math.min(hi, v));
+
+	// Soft boundary: past ±1 the light follows less and less
+	function rubberband(v: number) {
+		if (Math.abs(v) <= 1) return v;
+		const over = Math.abs(v) - 1;
+		return Math.sign(v) * (1 + (over * 0.55) / (1 + 0.55 * over));
+	}
+
+	// Apple's momentum projection: where a flick would come to rest
+	const project = (velocity: number, rate = 0.998) => ((velocity / 1000) * rate) / (1 - rate);
+
+	class RsMark extends HTMLElement {
+		canvas!: HTMLCanvasElement;
+		ctx!: CanvasRenderingContext2D;
+		image!: ImageData;
+		noise!: Float32Array;
+		w = 0;
+		modes = new Set<string>();
+		// Light position in [-1, 1] screen space, spring state per axis
+		light = { x: -0.55, y: -0.6, vx: 0, vy: 0 };
+		target = { x: -0.55, y: -0.6 };
+		raf = 0;
+		last = 0;
+		motion = matchMedia('(prefers-reduced-motion: reduce)');
+		drag: { id: number; x: number; y: number; lx: number; ly: number; samples: { x: number; y: number; t: number }[] } | null = null;
+
+		connectedCallback() {
+			this.canvas = this.querySelector('canvas')!;
+			const size = Number(this.dataset.size) || 112;
+			const dpr = Math.min(window.devicePixelRatio || 1, 2);
+			this.w = Math.round(size * dpr);
+			this.canvas.width = this.canvas.height = this.w;
+			this.ctx = this.canvas.getContext('2d')!;
+			this.image = this.ctx.createImageData(this.w, this.w);
+			this.modes = new Set((this.dataset.modes ?? 'cursor drag').split(/\s+/));
+
+			// Static white noise as the dither threshold, so dots never shimmer
+			this.noise = new Float32Array(this.w * this.w);
+			for (let i = 0; i < this.noise.length; i++) this.noise[i] = Math.random();
+
+			this.onMove = this.onMove.bind(this);
+			this.onDown = this.onDown.bind(this);
+			this.onDragMove = this.onDragMove.bind(this);
+			this.onUp = this.onUp.bind(this);
+
+			if (this.modes.has('cursor')) window.addEventListener('pointermove', this.onMove, { passive: true });
+			if (this.modes.has('drag')) {
+				this.classList.add('draggable');
+				this.addEventListener('pointerdown', this.onDown);
+				this.addEventListener('pointermove', this.onDragMove);
+				this.addEventListener('pointerup', this.onUp);
+				this.addEventListener('pointercancel', this.onUp);
+			}
+			this.draw();
+		}
+
+		disconnectedCallback() {
+			window.removeEventListener('pointermove', this.onMove);
+			cancelAnimationFrame(this.raf);
+		}
+
+		setTarget(x: number, y: number) {
+			this.target.x = x;
+			this.target.y = y;
+			if (this.motion.matches) {
+				this.light.x = x;
+				this.light.y = y;
+				this.light.vx = this.light.vy = 0;
+				this.draw();
+				return;
+			}
+			this.kick();
+		}
+
+		kick() {
+			if (!this.raf) {
+				this.last = performance.now();
+				this.raf = requestAnimationFrame((t) => this.tick(t));
+			}
+		}
+
+		onMove(e: PointerEvent) {
+			if (this.drag || e.pointerType !== 'mouse') return;
+			const r = this.getBoundingClientRect();
+			const reach = Math.max(320, r.width * 3);
+			this.setTarget(clamp((e.clientX - (r.left + r.width / 2)) / reach), clamp((e.clientY - (r.top + r.height / 2)) / reach));
+		}
+
+		onDown(e: PointerEvent) {
+			// Keep tracking even when the finger leaves the tile
+			try {
+				this.setPointerCapture(e.pointerId);
+			} catch {}
+			cancelAnimationFrame(this.raf);
+			this.raf = 0;
+			// Grab from wherever the light is right now, not where it was heading
+			this.drag = { id: e.pointerId, x: e.clientX, y: e.clientY, lx: this.light.x, ly: this.light.y, samples: [] };
+			this.light.vx = this.light.vy = 0;
+		}
+
+		onDragMove(e: PointerEvent) {
+			const d = this.drag;
+			if (!d || e.pointerId !== d.id) return;
+			const half = this.getBoundingClientRect().width / 2;
+			// 1:1 with the finger, relative to where it grabbed
+			this.light.x = rubberband(d.lx + (e.clientX - d.x) / half);
+			this.light.y = rubberband(d.ly + (e.clientY - d.y) / half);
+			this.target.x = this.light.x;
+			this.target.y = this.light.y;
+			d.samples.push({ x: this.light.x, y: this.light.y, t: e.timeStamp });
+			if (d.samples.length > 5) d.samples.shift();
+			this.draw();
+		}
+
+		onUp(e: PointerEvent) {
+			const d = this.drag;
+			if (!d || e.pointerId !== d.id) return;
+			this.drag = null;
+
+			// Release velocity from the last few samples, in light-units per second
+			const s = d.samples;
+			let vx = 0,
+				vy = 0;
+			if (s.length >= 2 && e.timeStamp - s[s.length - 1].t < 80) {
+				const a = s[0],
+					b = s[s.length - 1];
+				const dt = Math.max((b.t - a.t) / 1000, 1 / 120);
+				vx = (b.x - a.x) / dt;
+				vy = (b.y - a.y) / dt;
+			}
+
+			if (this.motion.matches) {
+				this.setTarget(clamp(this.light.x), clamp(this.light.y));
+				return;
+			}
+			// Hand the finger's velocity to the spring and land where the flick projects
+			this.light.vx = vx;
+			this.light.vy = vy;
+			this.setTarget(clamp(this.light.x + project(vx) * 0.25), clamp(this.light.y + project(vy) * 0.25));
+		}
+
+		// Critically damped spring (damping 1.0, response 0.4s), integrated in small fixed steps
+		tick(now: number) {
+			let remaining = Math.min((now - this.last) / 1000, 0.1);
+			this.last = now;
+			const w = (2 * Math.PI) / 0.4;
+			const l = this.light;
+			while (remaining > 0) {
+				const dt = Math.min(remaining, 1 / 240);
+				remaining -= dt;
+				for (const axis of ['x', 'y'] as const) {
+					const v = axis === 'x' ? 'vx' : 'vy';
+					const a = -2 * w * l[v] - w * w * (l[axis] - this.target[axis]);
+					l[v] += a * dt;
+					l[axis] += l[v] * dt;
+				}
+			}
+			this.draw();
+
+			const settled =
+				Math.abs(l.x - this.target.x) < 0.001 &&
+				Math.abs(l.y - this.target.y) < 0.001 &&
+				Math.abs(l.vx) + Math.abs(l.vy) < 0.01;
+			this.raf = settled ? 0 : requestAnimationFrame((t) => this.tick(t));
+		}
+
+		draw() {
+			const { w, image, noise } = this;
+			const data = image.data;
+
+			// Light direction, slightly toward the viewer
+			let lx = this.light.x * 1.4,
+				ly = this.light.y * 1.4,
+				lz = 0.75;
+			const ll = Math.hypot(lx, ly, lz);
+			lx /= ll;
+			ly /= ll;
+			lz /= ll;
+			// Half vector for the specular highlight
+			let hx = lx,
+				hy = ly,
+				hz = lz + 1;
+			const hl = Math.hypot(hx, hy, hz);
+			hx /= hl;
+			hy /= hl;
+			hz /= hl;
+
+			const R = 0.29; // planet radius
+			const tilt = -0.38; // ring tilt in radians
+			const cos = Math.cos(tilt),
+				sin = Math.sin(tilt);
+			const ra = 0.46,
+				rb = 0.11; // ring ellipse axes
+			const corner = 0.22; // tile corner radius
+			const [tr, tg, tb] = [11, 11, 12];
+
+			for (let py = 0; py < w; py++) {
+				const y = (py + 0.5) / w - 0.5;
+				for (let px = 0; px < w; px++) {
+					const x = (px + 0.5) / w - 0.5;
+					const i = py * w + px;
+					const o = i * 4;
+
+					// Rounded-square tile mask
+					const qx = Math.max(Math.abs(x) - (0.5 - corner), 0);
+					const qy = Math.max(Math.abs(y) - (0.5 - corner), 0);
+					if (Math.hypot(qx, qy) > corner) {
+						data[o + 3] = 0;
+						continue;
+					}
+
+					// Ring in its own rotated frame
+					const rx = x * cos - y * sin;
+					const ry = x * sin + y * cos;
+					const u = Math.hypot(rx / ra, ry / rb);
+					const onRing = (u > 0.74 && u < 0.86) || (u > 0.89 && u < 1);
+					const ringFront = ry > 0;
+
+					const d2 = (x * x + y * y) / (R * R);
+					let intensity = 0;
+
+					if (onRing && ringFront) {
+						intensity = 0.3 + 0.45 * Math.max(0, -ly * 0.6 + lz * 0.5) + 0.15 * (1 - u);
+					} else if (d2 < 1) {
+						const nx = x / R,
+							ny = y / R,
+							nz = Math.sqrt(1 - d2);
+						const diffuse = Math.max(0, nx * lx + ny * ly + nz * lz);
+						const spec = Math.pow(Math.max(0, nx * hx + ny * hy + nz * hz), 48);
+						// Ring shadow band across the planet
+						const shadow = Math.abs(ry + 0.02) < 0.018 ? 0.35 : 1;
+						intensity = 0.03 + 0.85 * diffuse * shadow + 0.7 * spec;
+					} else if (onRing) {
+						intensity = 0.22 + 0.3 * Math.max(0, -ly * 0.6 + lz * 0.5);
+					} else {
+						// Sparse stars
+						intensity = noise[(i * 7919) % noise.length] > 0.998 ? 0.9 : 0;
+					}
+
+					const on = Math.pow(Math.min(intensity, 1), 1.1) > noise[i];
+					if (on) {
+						data[o] = data[o + 1] = data[o + 2] = 245;
+					} else {
+						data[o] = tr;
+						data[o + 1] = tg;
+						data[o + 2] = tb;
+					}
+					data[o + 3] = 255;
+				}
+			}
+			this.ctx.putImageData(image, 0, 0);
+		}
+	}
+
+	if (!customElements.get('rs-mark')) customElements.define('rs-mark', RsMark);
+</script>
+
+<style>
+	rs-mark {
+		display: block;
+		flex: none;
+		/* The tile color, so the mark reads as a tile before the canvas draws */
+		background: #0b0b0c;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 22%;
+		box-shadow:
+			0 0 0 1px var(--hairline),
+			0 8px 24px rgba(0, 0, 0, 0.12);
+		transition: transform 160ms ease-out;
+	}
+
+	rs-mark:active {
+		transform: scale(0.97);
+	}
+
+	/* Draggable tiles own their touches so dragging never scrolls the page */
+	rs-mark.draggable {
+		touch-action: none;
+		cursor: grab;
+		user-select: none;
+		-webkit-user-select: none;
+		-webkit-touch-callout: none;
+	}
+
+	rs-mark.draggable:active {
+		cursor: grabbing;
+	}
+
+	canvas {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 22%;
+	}
+</style>

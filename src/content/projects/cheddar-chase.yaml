@@ -1,0 +1,13 @@
+title: Cheddar Chase
+group: university
+kind: Game
+year: 2024
+note: LiU Game Award finalist
+blurb: A pixel-art platformer in Godot about a mouse, a lot of cheese and some very persistent enemies.
+image: ../../assets/projects/cheddar-chase.png
+treatment: bleed
+pixel: true
+featured: true
+links:
+  live: https://rasmussvala.itch.io/cheddar-chase
+  code: https://github.com/rasmussvala/Cheddar-Chase

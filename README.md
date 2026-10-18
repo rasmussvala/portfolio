@@ -1,39 +1,16 @@
-# My Portfolio
+# Portfolio
 
-This repository contains the code for my personal portfolio website, which is built with React, p5 and CSS and hosted on GitHub Pages. 
+Personal portfolio built with [Astro](https://astro.build), deployed to GitHub Pages at <https://rasmussvala.github.io/portfolio>.
 
-## Setup
+## Development
 
-### Prerequisites
-You need Node.js with npm installed.
+Requires Node.js 22.22 or newer.
 
-### Steps
-1. **Clone the repository**
-    ```bash
-    git clone https://github.com/rasmussvala/portfolio.git
-    ```
-    Move to the directory:
-    ```bash
-    cd portfolio
-    ```
+```sh
+npm install
+npm run dev      # dev server at localhost:4321/portfolio
+npm run build    # production build to ./dist
+npm run preview  # preview the build
+```
 
-2. **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3. **Start the development server**
-    ```bash
-    npm start
-    ```
-
-4. **Open your browser and visit**
-    ```bash
-    http://localhost:3000
-    ```
-### Links
-
-- **Portfolio Website**: https://rasmussvala.github.io/portfolio/
-- **Email**: rasmus.svala@hotmail.com
-- **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
-- **LeetCode**: https://leetcode.com/u/rasmussvala/
+Pushes to `main` deploy through `.github/workflows/deploy.yml`.

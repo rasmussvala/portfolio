@@ -1,0 +1,182 @@
+---
+// A project card. The title link stretches over the whole card, so a secondary "Code" link can
+// sit inside it without nesting anchors. Cards without links are plain, non-interactive articles.
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	project: CollectionEntry<'projects'>['data'];
+	/** Above the fold: load the image eagerly */
+	eager?: boolean;
+	class?: string;
+	style?: string;
+}
+
+const { project: p, eager = false, class: className, style } = Astro.props;
+const meta = [p.kind, p.course ?? p.note, p.year].filter(Boolean).join(' · ');
+const primary = p.links.live ?? p.links.code;
+const secondary = p.links.live && p.links.code;
+const plate = p.treatment === 'plate';
+---
+
+<article class:list={['card', primary && 'linked', className]} style={style} data-group={p.group}>
+	{
+		p.image && (
+			<div class:list={['media', p.treatment]} style={plate ? `--plate: ${p.plate}` : undefined}>
+				<Image
+					src={p.image}
+					alt=""
+					class:list={[p.pixel && 'pixel']}
+					style={p.focus ? `object-position: ${p.focus}` : undefined}
+					widths={p.pixel ? [p.image.width] : [480, 960]}
+					sizes={plate ? '(max-width: 640px) 80vw, 380px' : '(max-width: 640px) 100vw, 474px'}
+					quality={p.pixel ? 'max' : undefined}
+					loading={eager ? 'eager' : 'lazy'}
+					fetchpriority={eager ? 'high' : undefined}
+				/>
+			</div>
+		)
+	}
+	<div class="text">
+		<p class="meta">{meta}</p>
+		<h3>{primary ? <a class="primary" href={primary}>{p.title}</a> : p.title}</h3>
+		<p class="blurb">{p.blurb}</p>
+		{
+			secondary && (
+				<a class="secondary" href={p.links.code}>
+					Code
+				</a>
+			)
+		}
+	</div>
+</article>
+
+<style>
+	.card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border-radius: var(--radius-lg);
+		background: var(--surface);
+		box-shadow: var(--shadow);
+		transition: transform 160ms ease-out;
+	}
+
+	.linked:active {
+		transform: scale(0.98);
+	}
+
+	/* The title link covers the card */
+	.primary::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+	.primary:focus-visible {
+		outline: none;
+	}
+
+	.card:has(.primary:focus-visible) {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	.media {
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+	}
+
+	.media img {
+		width: 100%;
+		height: 100%;
+		transition: transform 600ms var(--ease-out);
+	}
+
+	.bleed img {
+		object-fit: cover;
+	}
+
+	/* Plate: the screenshot floats on a tint, like a product shot */
+	.plate {
+		display: grid;
+		place-items: center;
+		padding: 8% 10% 0;
+		background: color-mix(in oklab, var(--plate) 85%, var(--surface));
+	}
+
+	.plate img {
+		width: auto;
+		height: auto;
+		max-height: 100%;
+		object-fit: contain;
+		object-position: bottom;
+		align-self: end;
+		border-radius: 10px 10px 0 0;
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.linked:hover .bleed img {
+			transform: scale(1.03);
+		}
+		.linked:hover .plate img {
+			transform: translateY(-4px);
+		}
+	}
+
+	.pixel {
+		image-rendering: pixelated;
+	}
+
+	.text {
+		padding: 1rem 1.25rem 1.25rem;
+	}
+
+	.meta {
+		color: var(--text-2);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+
+	h3 {
+		margin: 0.125rem 0 0;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.015em;
+	}
+
+	.blurb {
+		margin-top: 0.375rem;
+		color: var(--text-2);
+		font-size: 0.9375rem;
+		line-height: 1.45;
+	}
+
+	/* Sits above the stretched title link */
+	.secondary {
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		margin-top: 0.625rem;
+		color: var(--accent);
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.secondary:hover {
+			text-decoration: underline;
+		}
+	}
+
+	/* Keep the press feedback, drop the hover movement */
+	@media (prefers-reduced-motion: reduce) {
+		.linked:hover .media img {
+			transform: none;
+		}
+	}
+</style>

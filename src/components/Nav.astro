@@ -1,0 +1,82 @@
+---
+import { profile } from '../profile';
+---
+
+<header class="nav">
+	<div class="nav-inner">
+		<a class="nav-name" href="#top">{profile.name}</a>
+		<nav aria-label="Main">
+			<a href="#work">Work</a>
+			<a href={profile.github}>GitHub</a>
+			<a href={profile.linkedin}>LinkedIn</a>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.nav {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: var(--material);
+		-webkit-backdrop-filter: blur(20px) saturate(180%);
+		backdrop-filter: blur(20px) saturate(180%);
+	}
+
+	/* Scroll edge effect instead of a hard divider */
+	.nav::after {
+		content: '';
+		position: absolute;
+		inset: 100% 0 auto;
+		height: 12px;
+		background: linear-gradient(var(--edge), transparent);
+		pointer-events: none;
+	}
+
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		max-width: var(--content);
+		height: 3rem;
+		margin: 0 auto;
+		padding: 0 var(--gutter);
+	}
+
+	.nav-name {
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		white-space: nowrap;
+	}
+
+	nav {
+		display: flex;
+		gap: 1.5rem;
+		font-size: 0.875rem;
+	}
+
+	nav a {
+		color: var(--text-2);
+		transition: color 150ms ease-out;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		nav a:hover {
+			color: var(--text);
+		}
+	}
+
+	@media (max-width: 400px) {
+		nav {
+			gap: 1rem;
+		}
+	}
+
+	@media (prefers-reduced-transparency: reduce) {
+		.nav {
+			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
+		}
+	}
+</style>

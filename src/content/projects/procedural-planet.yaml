@@ -1,0 +1,10 @@
+title: Procedural Planet
+group: university
+kind: Graphics
+year: 2023
+course: TNM084
+blurb: Terrain, clouds and stars generated from noise in Three.js and GLSL.
+image: ../../assets/projects/planet.png
+links:
+  live: https://proceduralplanet.vercel.app/
+  code: https://github.com/rasmussvala/TNM084-Procedural-Planet

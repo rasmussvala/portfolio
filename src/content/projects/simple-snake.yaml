@@ -1,0 +1,9 @@
+title: Simple Snake
+group: personal
+kind: Game
+year: 2025
+blurb: A minimal retro snake game in Unity.
+image: ../../assets/projects/snake.svg
+links:
+  live: https://rasmussvala.itch.io/simple-snake
+  code: https://github.com/rasmussvala/Simple-Snake-Game
