@@ -1,0 +1,9 @@
+title: Particle System
+group: university
+kind: Graphics
+year: 2023
+course: TNM094
+blurb: A particle system in C++ and OpenGL with a small editor UI.
+image: ../../assets/projects/particle.png
+links:
+  code: https://github.com/rasmussvala/TNM094-Particle-System

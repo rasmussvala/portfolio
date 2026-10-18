@@ -1,0 +1,13 @@
+title: Course Picker
+group: university
+kind: Web
+year: 2023
+note: Bachelor's thesis
+blurb: A web app for planning master’s courses, built with React and Firebase.
+image: ../../assets/projects/kandidat.jpg
+treatment: plate
+plate: '#d6ebe7'
+featured: true
+links:
+  live: https://litheval.vercel.app/
+  code: https://github.com/jronnefalk/lithe-val

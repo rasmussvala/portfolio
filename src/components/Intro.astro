@@ -1,0 +1,72 @@
+---
+// Quiet intro: the mark, name and role, then a short "Today" paragraph.
+import Mark from './Mark.astro';
+import { profile } from '../profile';
+---
+
+<section class="intro">
+	<div class="id rise">
+		<Mark size={88} />
+		<div>
+			<h1>{profile.name}</h1>
+			<p class="role">{profile.role}</p>
+		</div>
+	</div>
+
+	<div class="today rise" style="--i: 1">
+		<h2>Today</h2>
+		{profile.today.map((t) => <p>{t}</p>)}
+	</div>
+</section>
+
+<style>
+	.intro {
+		padding: 5rem 0 2rem;
+	}
+
+	.id {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	h1 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+	}
+
+	.role {
+		color: var(--text-2);
+		font-size: 1.125rem;
+		line-height: 1.3;
+	}
+
+	.today {
+		max-width: 38rem;
+		margin-top: 5rem;
+	}
+
+	h2 {
+		font-size: 1.0625rem;
+		font-weight: 600;
+		letter-spacing: -0.005em;
+	}
+
+	.today p {
+		margin-top: 1rem;
+		color: var(--text-2);
+		font-size: 1.125rem;
+		line-height: 1.65;
+	}
+
+	@media (max-width: 640px) {
+		.intro {
+			padding-top: 3rem;
+		}
+		.today {
+			margin-top: 3rem;
+		}
+	}
+</style>

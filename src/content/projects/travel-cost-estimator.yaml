@@ -1,0 +1,11 @@
+title: Travel Cost Estimator
+group: personal
+kind: Web
+year: 2025
+blurb: Plan a road trip on a 3D globe and see what the fuel will cost, using Mapbox and live gas prices.
+image: ../../assets/projects/travel.png
+treatment: bleed
+featured: true
+links:
+  live: https://travel-cost-estimator.vercel.app/
+  code: https://github.com/rasmussvala/Travel-Cost-Estimator

@@ -1,0 +1,11 @@
+title: Global Illumination
+group: university
+kind: Graphics
+year: 2023
+course: TNCG15
+blurb: A Monte Carlo ray tracer in C++ with reflective, transparent and Lambertian surfaces.
+image: ../../assets/projects/raytracing.png
+treatment: bleed
+featured: true
+links:
+  code: https://github.com/rasmussvala/TNGC15-Global-Illumination

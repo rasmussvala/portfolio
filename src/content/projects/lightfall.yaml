@@ -1,0 +1,13 @@
+title: Lightfall
+group: personal
+kind: Game
+year: 2025
+note: Game jam
+blurb: A platformer where you are the light source and batteries keep you alive. Made for Bigmode Game Jam 2025.
+image: ../../assets/projects/lightfall.png
+treatment: bleed
+focus: center 40%
+featured: true
+links:
+  live: https://rasmussvala.itch.io/lightfall
+  code: https://github.com/rasmussvala/Bigmode-Game-Jam-2025

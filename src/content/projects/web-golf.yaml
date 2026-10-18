@@ -1,0 +1,11 @@
+title: Web Golf
+group: university
+kind: Game
+year: 2024
+blurb: Real-time multiplayer mini golf in the browser with Three.js and Firebase.
+image: ../../assets/projects/webgolf.png
+treatment: bleed
+featured: true
+links:
+  live: https://webgolf.vercel.app/
+  code: https://github.com/rasmussvala/Web-Golf

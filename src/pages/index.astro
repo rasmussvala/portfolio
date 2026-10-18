@@ -1,17 +1,26 @@
 ---
-const base = import.meta.env.BASE_URL;
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Intro from '../components/Intro.astro';
+import ProjectFilter from '../components/ProjectFilter.astro';
+import { profile } from '../profile';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-		<link rel="icon" href={`${base}/favicon.ico`} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Rasmus Svala</title>
-	</head>
-	<body>
-		<h1>Rasmus Svala</h1>
-	</body>
-</html>
+<Base
+	title={`${profile.name} · ${profile.role}`}
+	description={profile.description}
+>
+	<Nav />
+	<main>
+		<Intro />
+		<ProjectFilter />
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--content);
+		margin: 0 auto;
+		padding: 0 var(--gutter);
+	}
+</style>
