@@ -1,39 +1,27 @@
-# My Portfolio
+# Portfolio
 
-This repository contains the code for my personal portfolio website, which is built with React, p5 and CSS and hosted on GitHub Pages. 
+Repo for my portfolio.
 
-## Setup
+## Dev Setup
 
 ### Prerequisites
-You need Node.js with npm installed.
+
+Node.js with npm.
 
 ### Steps
-1. **Clone the repository**
-    ```bash
-    git clone https://github.com/rasmussvala/portfolio.git
-    ```
-    Move to the directory:
-    ```bash
-    cd portfolio
-    ```
 
-2. **Install dependencies**
-    ```bash
-    npm install
-    ```
+```bash
+git clone https://github.com/rasmussvala/portfolio.git
+```
 
-3. **Start the development server**
-    ```bash
-    npm start
-    ```
+```bash
+cd portfolio
+```
 
-4. **Open your browser and visit**
-    ```bash
-    http://localhost:3000
-    ```
-### Links
+```bash
+npm install
+```
 
-- **Portfolio Website**: https://rasmussvala.github.io/portfolio/
-- **Email**: rasmus.svala@hotmail.com
-- **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
-- **LeetCode**: https://leetcode.com/u/rasmussvala/
+```bash
+npm start
+```
