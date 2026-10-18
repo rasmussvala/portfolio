@@ -33,7 +33,7 @@ export default function Footer() {
         <span>2026 Rasmus Svala</span>
         <span>
           <a
-            href="https://github.com/rasmussvala/Portfolio"
+            href="https://github.com/rasmussvala/portfolio"
             target="_blank"
             rel="noopener noreferrer"
           >
