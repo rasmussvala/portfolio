@@ -1,6 +1,6 @@
 # My Portfolio
 
-This repository contains the code for my personal portfolio website, which is built with React, p5 and CSS and hosted on Vercel. 
+This repository contains the code for my personal portfolio website, which is built with React, p5 and CSS and hosted on GitHub Pages. 
 
 ## Setup
 
@@ -33,7 +33,7 @@ You need Node.js with npm installed.
     ```
 ### Links
 
-- **Portfolio Website**: https://rasmussvala.vercel.app/
+- **Portfolio Website**: https://rasmussvala.github.io/Portfolio/
 - **Email**: rasmus.svala@hotmail.com
 - **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
 - **LeetCode**: https://leetcode.com/u/rasmussvala/

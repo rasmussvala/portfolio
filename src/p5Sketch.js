@@ -19,7 +19,7 @@ export default function sketch(p) {
   const backgroundColor = getCSSVariable("--background-color");
 
   p.preload = () => {
-    customFont = p.loadFont("/Anton-Regular.ttf");
+    customFont = p.loadFont(`${process.env.PUBLIC_URL}/Anton-Regular.ttf`);
   };
 
   p.setup = () => {
