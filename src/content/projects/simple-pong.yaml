@@ -3,8 +3,7 @@ group: personal
 kind: Game
 year: 2025
 blurb: Pong in Unity with smooth paddles, a basic AI and score tracking.
-image: ../../assets/projects/pong.png
-focus: center top
+image: ../../assets/projects/pong.svg
 links:
   live: https://rasmussvala.itch.io/simple-pong
   code: https://github.com/rasmussvala/Simple-Pong-Game
