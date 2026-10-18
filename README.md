@@ -10,11 +10,11 @@ You need Node.js with npm installed.
 ### Steps
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/rasmussvala/Portfolio.git
+    git clone https://github.com/rasmussvala/portfolio.git
     ```
     Move to the directory:
     ```bash
-    cd Portfolio
+    cd portfolio
     ```
 
 2. **Install dependencies**
@@ -33,7 +33,7 @@ You need Node.js with npm installed.
     ```
 ### Links
 
-- **Portfolio Website**: https://rasmussvala.github.io/Portfolio/
+- **Portfolio Website**: https://rasmussvala.github.io/portfolio/
 - **Email**: rasmus.svala@hotmail.com
 - **LinkedIn**: https://www.linkedin.com/in/rasmus-svala/
 - **LeetCode**: https://leetcode.com/u/rasmussvala/
